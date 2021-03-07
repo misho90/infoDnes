@@ -1,0 +1,33 @@
+cors:
+  allowed:
+    origins: http://localhost:3000
+endpoints:
+  shutdown:
+    enabled: true
+hibernate:
+  generate_statistics: true
+management:
+  endpoint:
+    shutdown:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+rest:
+  api:
+    base:
+      path: api
+spring:
+  datasource:
+    driver-class-name: org.hsqldb.jdbc.JDBCDriver
+    password: ''
+    url: jdbc:hsqldb:file:C:/Users/mmiho/Downloads/hsqldb-2.5.1/hsqldb/hsqldb/demodb
+    username: sa
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: false
+    show-sql: true

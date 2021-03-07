@@ -1,0 +1,48 @@
+plugins {
+    id 'org.springframework.boot' version '2.4.2'
+    id 'java'
+    id 'io.franzbecker.gradle-lombok' version '1.8'
+    id "com.github.node-gradle.node" version "3.0.1"
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.andrew_flower.demo'
+version = '1.2.0'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'rome:rome:1.0'
+    implementation 'org.hsqldb:hsqldb:2.5.1'
+
+    compileOnly 'org.projectlombok:lombok:1.18.4'
+    annotationProcessor 'org.projectlombok:lombok:1.18.4'
+
+    runtimeClasspath "org.springframework.boot:spring-boot-devtools"
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.4'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.4'
+}
+
+node {
+    version = '14.15.5'
+}
+
+task buildReactApp(type: NodeTask, dependsOn: 'npmInstall') {
+    script = project.file('node_modules/webpack/bin/webpack.js')
+    args = [
+            '--mode', 'development',
+            '--entry', './src/main/webapp/javascript/Main.jsx',
+            '-o', './src/main/resources/static/dist'
+    ]
+}
+
+processResources.dependsOn 'buildReactApp'
+clean.delete << file('node_modules')
+clean.delete << file('src/main/resources/static/dist')

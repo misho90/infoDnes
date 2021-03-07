@@ -1,0 +1,142 @@
+body{
+  font-family: 'Pangolin', cursive !important;
+  background: url("background.jfif") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+
+.inline{
+    display: inline-block;
+}
+.width{
+  width: 102%;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.right{
+  margin-left: 1%;
+  float: right;
+}
+
+.center{
+  align-items:center;
+  justify-content:center;
+  display: flex;
+}
+
+.details{
+  font-size: 1.1em;
+  font-family: 'Pangolin', cursive;
+}
+
+.fiveDaysForecast{
+  font-size: 1.5em;
+  padding-left: 3%;
+}
+
+.marginRightFivePercent{
+  margin-right: 5%;
+}
+
+.marginLeftFivePercent{
+  margin-left: 5%;
+}
+
+.marginLeftFourPercent{
+  margin-left: 4%;
+}
+
+.forecast{
+  font-size: 1.3em;
+}
+
+.inheritPadding{
+  padding-left: inherit;
+}
+
+.thirtySixPercentWidth{
+  width: 36%;
+}
+
+.TwentyPersentWidth{
+  width: 17%;
+  margin-left: 3%;
+}
+
+.icon-wrap{
+  font-size: 7em;
+  display: inline-block;
+}
+
+.temperature{
+  margin-left: 5%;
+  font-size: 3.8em;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.condition{
+  font-weight: bold;
+  margin-left: 5%;
+  font-size: 1.5em;
+  width: 40%;
+  font-family: 'Pangolin', cursive;
+}
+
+.logo {
+  height: auto;
+  width: 10%;
+}
+
+.holder{
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.minWidth{
+  min-width: 40%;
+}
+.marginLeftThirtythreePercent{
+ margin-left: 33%;
+}
+
+@media screen and (max-width: 850px) {
+   .inline {
+    float: none;
+    margin-right:0;
+    width:auto;
+    border:0;
+  }
+  .minWidth{
+    min-width: 100%;
+  }
+  .marginLeftFourPercent{
+    margin-left: 0%;
+    margin-top: 5%;
+  }
+
+  .marginLeftThirtythreePercent{
+   margin-left: 33%%;
+  }
+
+  .fiveDaysForecast{
+    font-size: 1.2em;
+  }
+
+  .forecast{
+    font-size:0.9em;
+  }
+
+  .navbar-collapse.collapse.in {
+    display: block!important;
+  }
+}
